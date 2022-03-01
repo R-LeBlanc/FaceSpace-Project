@@ -2,6 +2,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 
+import HomePage from "./Homepage";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -9,9 +11,10 @@ const App = () => {
       <div>
         <Switch>
           <Route exact path="/">
-            Homepage
+            {HomePage}
           </Route>
-          <Route path="/page-1">Page 1</Route>
+          <Route path="/api/users/:id">Users Page</Route>
+          <Route path="/signin">Sign in here</Route>
         </Switch>
       </div>
     </BrowserRouter>
