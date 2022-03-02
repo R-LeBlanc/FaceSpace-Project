@@ -3,24 +3,53 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 
+import { UsersContext } from "./UsersContext";
+
 const HomePage = () => {
+  const {
+    state,
+    actions: { recieveUserDataFromServer },
+  } = React.useContext(UsersContext);
+
+  React.useEffect(() => {
+    fetch("/api/users")
+      .then((res) => res.json())
+      .then((data) => {
+        recieveUserDataFromServer(data);
+      });
+  }, []);
+
+  //   console.log(state);
   return (
-    <>
+    <Page>
       <Header>
         <Title>Facespace</Title>
         <SignIn to="/signin">Sign In</SignIn>
-        {/* <Link to="signin">Sign In</Link> */}
       </Header>
-    </>
+      <BigWrapper>
+        <Wrapper>
+          <Comment>All Facespace Members</Comment>
+          {!state.loading &&
+            state.data.map((user) => {
+              // console.log(user.avatarUrl);
+              return <Image key={user.id} src={user.avatarUrl} />;
+            })}
+        </Wrapper>
+      </BigWrapper>
+    </Page>
   );
 };
 
 export default HomePage;
 
+const Page = styled.div`
+  font-family: var(--heading-font-family);
+`;
+
 const Header = styled.div`
   background-color: var(--primary-color);
   color: white;
-  font-family: var(--heading-font-family);
+
   font-size: 2rem;
   height: var(--header-height);
   padding: 15px;
@@ -34,4 +63,30 @@ const Title = styled.div``;
 const SignIn = styled(Link)`
   color: white;
   text-decoration: none;
+`;
+
+const BigWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: var(--max-content-width);
+`;
+
+const Comment = styled.div`
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin: 15px 10px 0;
+  width: 90%;
+`;
+
+const Image = styled.img`
+  display: flex;
+  margin: 10px;
+  width: var(--user-img-width);
 `;
