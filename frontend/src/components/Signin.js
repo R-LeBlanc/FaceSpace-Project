@@ -70,7 +70,6 @@ const MainWrapper = styled.div`
 
 const SigninWrapper = styled.div`
   display: flex;
-
   justify-content: center;
   align-items: center;
   height: inherit;

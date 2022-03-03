@@ -14,7 +14,7 @@ const App = () => {
       <GlobalStyles />
       <Routes>
         <Route exact path="/" element={<HomePage />}></Route>
-        <Route path="/api/users/:id" element={<ProfilePage />}></Route>
+        <Route path="/:id" element={<ProfilePage />}></Route>
         <Route path="/signin" element={<SignInPage />}></Route>
       </Routes>
     </BrowserRouter>

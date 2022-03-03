@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
+import { useNavigate } from "react-router-dom";
 
 import { UsersContext } from "./UsersContext";
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const {
     state,
     actions: { recieveUserDataFromServer },
@@ -18,6 +20,11 @@ const HomePage = () => {
         recieveUserDataFromServer(data);
       });
   }, []);
+
+  const handleImageClick = (id) => {
+    // console.log(id);
+    navigate(`/${id}`);
+  };
 
   //   console.log(state);
   return (
@@ -32,7 +39,13 @@ const HomePage = () => {
           {!state.loading &&
             state.data.map((user) => {
               // console.log(user.avatarUrl);
-              return <Image key={user.id} src={user.avatarUrl} />;
+              return (
+                <Image
+                  key={user.id}
+                  src={user.avatarUrl}
+                  onClick={() => handleImageClick(user.id)}
+                />
+              );
             })}
         </Wrapper>
       </BigWrapper>
@@ -89,4 +102,10 @@ const Image = styled.img`
   display: flex;
   margin: 10px;
   width: var(--user-img-width);
+
+  &:hover {
+    border: 5px solid var(--primary-color);
+    cursor: pointer;
+    transform: scale(1.5);
+  }
 `;
