@@ -29,7 +29,7 @@ const HomePage = () => {
         <Title>Facespace</Title>
         {!userState.signedIn && <SignIn to="/signin">Sign In</SignIn>}
         {userState.signedIn && (
-          <Welcome>Welcome {userState.currentUser.name}</Welcome>
+          <Welcome>Welcome, {userState.currentUser.name}</Welcome>
         )}
       </Header>
       <BigWrapper>
@@ -37,13 +37,19 @@ const HomePage = () => {
           <Comment>All Facespace Members</Comment>
           {!state.loading &&
             state.data.map((user) => {
-              // console.log(user.avatarUrl);
               return (
-                <Image
-                  key={user.id}
-                  src={user.avatarUrl}
-                  onClick={() => handleImageClick(user.id)}
-                />
+                <ImgWrapper key={user.id}>
+                  <Image
+                    src={user.avatarUrl}
+                    onClick={() => handleImageClick(user.id)}
+                  />
+                  {userState.signedIn &&
+                    userState.currentUser.friends.map((friend) => {
+                      if (friend === user.id) {
+                        return <Shape key={friend}></Shape>;
+                      }
+                    })}
+                </ImgWrapper>
               );
             })}
         </Wrapper>
@@ -74,10 +80,13 @@ const Title = styled.div``;
 
 const SignIn = styled(Link)`
   color: white;
+  font-size: 1.5rem;
   text-decoration: none;
 `;
 
-const Welcome = styled.div``;
+const Welcome = styled.div`
+  font-size: 1.5rem;
+`;
 
 const BigWrapper = styled.div`
   display: flex;
@@ -99,14 +108,41 @@ const Comment = styled.div`
   width: 90%;
 `;
 
-const Image = styled.img`
-  display: flex;
+const ImgWrapper = styled.div`
+  position: relative;
   margin: 10px;
+  overflow: hidden;
+  transition: 0.4s all ease-in-out;
   width: var(--user-img-width);
 
   &:hover {
     border: 5px solid var(--primary-color);
     cursor: pointer;
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
+`;
+
+const Image = styled.img`
+  display: flex;
+  width: 100%;
+`;
+
+const Shape = styled.div`
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 5px;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  height: 40px;
+  width: 40px;
 `;

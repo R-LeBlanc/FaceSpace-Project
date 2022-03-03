@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import { UsersContext } from "./UsersContext";
+import { SignedInUserContex } from "./SignedInUserContext";
 
 const ProfilePage = () => {
   const { id } = useParams();
@@ -11,6 +12,7 @@ const ProfilePage = () => {
   const [userProfile, setUserProfile] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const [friends, setFriends] = React.useState([]);
+  const { userState } = React.useContext(SignedInUserContex);
 
   React.useEffect(() => {
     fetch(`/api/users/${id}`)
@@ -24,26 +26,24 @@ const ProfilePage = () => {
   React.useEffect(() => {
     if (!loading) {
       userProfile.friends.map((friend) => {
-        // console.log(friend);
         fetch(`/api/users/${friend}`)
           .then((res) => res.json())
           .then((data) => {
             // console.log(data);
             setFriends((friends) => [...friends, data.data]);
-            // setFriends(data.data);
           });
       });
     }
   }, [loading]);
 
-  //   console.log(friends);
-  //   console.log(userProfile);
-
   return (
     <Body>
       <Header>
         <Title to="/">Facespace</Title>
-        <SignIn to="/signin">Sign In</SignIn>
+        {!userState.signedIn && <SignIn to="/signin">Sign In</SignIn>}
+        {userState.signedIn && (
+          <Welcome>Welcome, {userState.currentUser.name}</Welcome>
+        )}
       </Header>
       {!loading && (
         <>
@@ -98,7 +98,12 @@ const Title = styled(Link)`
 
 const SignIn = styled(Link)`
   color: white;
+  font-size: 1.5rem;
   text-decoration: none;
+`;
+
+const Welcome = styled.div`
+  font-size: 1.5rem;
 `;
 
 const ProfileHeader = styled.div`
