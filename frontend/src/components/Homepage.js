@@ -5,6 +5,7 @@ import GlobalStyles from "./GlobalStyles";
 import { useNavigate } from "react-router-dom";
 
 import { UsersContext } from "./UsersContext";
+import { SignedInUserContex } from "./SignedInUserContext";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -12,26 +13,24 @@ const HomePage = () => {
     state,
     actions: { recieveUserDataFromServer },
   } = React.useContext(UsersContext);
-
-  React.useEffect(() => {
-    fetch("/api/users")
-      .then((res) => res.json())
-      .then((data) => {
-        recieveUserDataFromServer(data);
-      });
-  }, []);
+  const {
+    userState,
+    actions: { recieveSignedInUserData },
+  } = React.useContext(SignedInUserContex);
 
   const handleImageClick = (id) => {
-    // console.log(id);
     navigate(`/${id}`);
   };
 
-  //   console.log(state);
+  console.log(userState);
   return (
     <Page>
       <Header>
         <Title>Facespace</Title>
-        <SignIn to="/signin">Sign In</SignIn>
+        {!userState.signedIn && <SignIn to="/signin">Sign In</SignIn>}
+        {userState.signedIn && (
+          <Welcome>Welcome {userState.currentUser.name}</Welcome>
+        )}
       </Header>
       <BigWrapper>
         <Wrapper>
@@ -77,6 +76,8 @@ const SignIn = styled(Link)`
   color: white;
   text-decoration: none;
 `;
+
+const Welcome = styled.div``;
 
 const BigWrapper = styled.div`
   display: flex;

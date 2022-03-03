@@ -2,17 +2,42 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
+import { useNavigate } from "react-router-dom";
+
+import { SignedInUserContex } from "./SignedInUserContext";
+import { UsersContext } from "./UsersContext";
 
 const SignInPage = () => {
-  const [user, setUser] = React.useState(null);
+  const navigate = useNavigate();
+  const {
+    userState,
+    actions: { recieveSignedInUserData },
+  } = React.useContext(SignedInUserContex);
+  const {
+    state,
+    actions: { recieveUserDataFromServer },
+  } = React.useContext(UsersContext);
+  const [name, setName] = React.useState(null);
 
   const onNameChange = (event) => {
-    setUser(event.target.value);
+    setName(event.target.value);
   };
 
   const handleSubmit = () => {
-    console.log(user);
+    console.log(name);
+    state.data.map((user) => {
+      if (user.name === name) {
+        fetch(`/api/users/${user.id}`)
+          .then((res) => res.json())
+          .then((data) => {
+            // console.log(data);
+            recieveSignedInUserData(data.data);
+            navigate("/");
+          });
+      }
+    });
   };
+
   return (
     <Body>
       <Header>

@@ -9,6 +9,19 @@ import ProfilePage from "./ProfilePage";
 import { UsersContext } from "./UsersContext";
 
 const App = () => {
+  const {
+    state,
+    actions: { recieveUserDataFromServer },
+  } = React.useContext(UsersContext);
+
+  React.useEffect(() => {
+    fetch("/api/users")
+      .then((res) => res.json())
+      .then((data) => {
+        recieveUserDataFromServer(data);
+      });
+  }, []);
+
   return (
     <BrowserRouter>
       <GlobalStyles />
