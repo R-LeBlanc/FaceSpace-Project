@@ -84,7 +84,14 @@ const Body = styled.div`
 `;
 
 const Header = styled.div`
-  background-color: var(--primary-color);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--primary-color),
+    var(--primary-light)
+  );
+  border-bottom: 1px solid white;
+  border-radius: 0 0 20% 20%;
+  box-shadow: 0 0 15px #4f80d5;
   color: white;
 
   font-size: 2rem;

@@ -46,7 +46,12 @@ const HomePage = () => {
                   {userState.signedIn &&
                     userState.currentUser.friends.map((friend) => {
                       if (friend === user.id) {
-                        return <Shape key={friend}></Shape>;
+                        return (
+                          <Shape
+                            key={friend}
+                            src="/images/Mass_Effect/specter-logo.png"
+                          ></Shape>
+                        );
                       }
                     })}
                 </ImgWrapper>
@@ -101,14 +106,12 @@ const Welcome = styled.div`
 const BigWrapper = styled.div`
   display: flex;
   justify-content: center;
-  /* width: 100vw; */
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* padding: 60px; */
   margin-top: 30px;
   max-width: var(--max-content-width);
 `;
@@ -142,11 +145,11 @@ const Image = styled.img`
   height: 100%;
 `;
 
-const Shape = styled.div`
-  background-color: var(--secondary-color);
+const Shape = styled.img`
+  color: red;
   position: absolute;
   top: 5px;
-  clip-path: polygon(
+  /* clip-path: polygon(
     50% 0%,
     61% 35%,
     98% 35%,
@@ -157,7 +160,7 @@ const Shape = styled.div`
     32% 57%,
     2% 35%,
     39% 35%
-  );
+  ); */
   height: 40px;
-  width: 40px;
+  width: 30px;
 `;

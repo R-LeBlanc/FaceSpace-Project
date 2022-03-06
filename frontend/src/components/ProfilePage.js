@@ -80,7 +80,11 @@ const Body = styled.div`
 `;
 
 const Header = styled.div`
-  background-color: var(--primary-color);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--primary-color),
+    var(--primary-light)
+  );
   color: white;
 
   font-size: 2rem;
