@@ -20,22 +20,33 @@ const SignInPage = () => {
   const [name, setName] = React.useState(null);
 
   const onNameChange = (event) => {
-    setName(event.target.value);
+    state.data.map((user) => {
+      if (user.name === event.target.value) {
+        setName(user);
+      }
+    });
+    // setName(event.target.value);
   };
 
   const handleSubmit = () => {
-    console.log(name);
-    state.data.map((user) => {
-      if (user.name === name) {
-        fetch(`/api/users/${user.id}`)
-          .then((res) => res.json())
-          .then((data) => {
-            // console.log(data);
-            recieveSignedInUserData(data.data);
-            navigate("/");
-          });
-      }
-    });
+    // console.log(name);
+    // state.data.map((user) => {
+    //   console.log(user);
+    //   if (user.name === name) {
+    const requestOptions = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(name),
+    };
+    fetch(`/api/users/`, requestOptions)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        recieveSignedInUserData(data.data);
+        navigate("/");
+      });
+    //   }
+    // });
   };
 
   return (

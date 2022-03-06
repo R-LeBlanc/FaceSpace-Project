@@ -22,7 +22,7 @@ const HomePage = () => {
     navigate(`/${id}`);
   };
 
-  console.log(userState);
+  //   console.log(userState);
   return (
     <Page>
       <Header>
