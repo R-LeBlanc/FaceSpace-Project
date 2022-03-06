@@ -124,6 +124,7 @@ const Comment = styled.div`
 `;
 
 const ImgWrapper = styled.div`
+  border-radius: 0 40% 0 15%;
   display: flex;
   justify-content: center;
   position: relative;
@@ -149,18 +150,6 @@ const Shape = styled.img`
   color: red;
   position: absolute;
   top: 5px;
-  /* clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  ); */
   height: 40px;
   width: 30px;
 `;

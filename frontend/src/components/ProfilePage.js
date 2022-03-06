@@ -76,7 +76,9 @@ const ProfilePage = () => {
 export default ProfilePage;
 
 const Body = styled.div`
+  background-color: var(--primary-color);
   font-family: var(--heading-font-family);
+  height: 100vh;
 `;
 
 const Header = styled.div`
@@ -85,6 +87,9 @@ const Header = styled.div`
     var(--primary-color),
     var(--primary-light)
   );
+  border-bottom: 1px solid white;
+  border-radius: 0 0 20% 20%;
+  box-shadow: 0 0 15px #4f80d5;
   color: white;
 
   font-size: 2rem;
@@ -131,6 +136,7 @@ const Wrapper = styled.div`
 `;
 
 const DisplayImg = styled.img`
+  border-radius: 5%;
   max-height: 20vh;
   position: relative;
   top: -10vh;
@@ -138,22 +144,29 @@ const DisplayImg = styled.img`
 `;
 
 const Name = styled.div`
-  color: var(--primary-color);
-  font-size: 1.5rem;
+  color: var(--tertiary-light);
+  font-size: 3rem;
   margin: 20px 30px;
+  height: 40px;
   z-index: 5;
 `;
 
 const FriendsWrapper = styled.div`
+  background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
-  margin: 0 20vw;
+  padding: 0 20vw;
 `;
 
 const UsersFriends = styled.div`
-  border-bottom: 2px solid var(--primary-color);
-  color: var(--primary-color);
+  background-color: rgba(18, 96, 224, 0.5);
+  border-bottom: 1px solid var(--tertiary-light);
+  border-radius: 10px;
+  box-shadow: 0 0 5px #4f80d5;
+  color: var(--tertiary-light);
   font-size: 1.3rem;
+  padding: 10px;
+  margin-bottom: 15px;
   width: 100%;
 `;
 
@@ -165,6 +178,7 @@ const ImgWrapper = styled.div`
 `;
 
 const SecondImgWrapper = styled.div`
+  border-radius: 5%;
   position: relative;
   margin: 10px;
   overflow: hidden;
@@ -185,7 +199,7 @@ const FriendImg = styled.img`
 `;
 
 const FriendName = styled.div`
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(127, 210, 232, 0.4);
   padding: 5px 0;
   position: absolute;
   bottom: 2px;

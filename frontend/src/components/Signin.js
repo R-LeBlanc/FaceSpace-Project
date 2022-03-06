@@ -108,7 +108,7 @@ const Title = styled(Link)`
 `;
 
 const MainWrapper = styled.div`
-  height: 93%;
+  height: 90%;
 `;
 
 const SigninWrapper = styled.div`
@@ -119,10 +119,11 @@ const SigninWrapper = styled.div`
 `;
 
 const Border = styled.div`
-  background: rgba(255, 255, 255, 0.4);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 44% 100%, 40% 85%, 0% 85%);
+  background: rgba(127, 210, 232, 0.4);
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 50px 30px;
   width: 300px;
 `;
 
@@ -139,4 +140,12 @@ const Submit = styled.button`
   border: none;
   font-family: var(--heading-font-family);
   font-size: 1.5rem;
+  transition: 0.4s all ease-in-out;
+
+  &:hover {
+    border: 1px solid white;
+    box-shadow: 0 0 15px #4f80d5;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
 `;
