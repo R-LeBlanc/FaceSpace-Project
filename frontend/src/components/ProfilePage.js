@@ -155,18 +155,28 @@ const UsersFriends = styled.div`
 
 const ImgWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: var(--max-content-width);
 `;
 
 const SecondImgWrapper = styled.div`
-  margin: 20px 20px 20px 0;
   position: relative;
-  text-align: center;
+  margin: 10px;
+  overflow: hidden;
+  transition: 0.4s all ease-in-out;
+  height: var(--user-img-width);
   width: var(--user-img-width);
+
+  &:hover {
+    border: 5px solid var(--secondary-color);
+    cursor: pointer;
+    transform: scale(1.2);
+  }
 `;
 
 const FriendImg = styled.img`
-  border: 2px solid var(--primary-color);
-  /* height: 100%; */
+  display: flex;
   width: 100%;
 `;
 

@@ -113,10 +113,11 @@ const ImgWrapper = styled.div`
   margin: 10px;
   overflow: hidden;
   transition: 0.4s all ease-in-out;
+  height: var(--user-img-width);
   width: var(--user-img-width);
 
   &:hover {
-    border: 5px solid var(--primary-color);
+    border: 5px solid var(--secondary-color);
     cursor: pointer;
     transform: scale(1.2);
   }
@@ -128,7 +129,7 @@ const Image = styled.img`
 `;
 
 const Shape = styled.div`
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   position: absolute;
   top: 5px;
   clip-path: polygon(
