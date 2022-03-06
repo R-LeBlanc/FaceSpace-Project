@@ -5,10 +5,13 @@ export const breakpoints = { tablet: "600px" };
 export default createGlobalStyle`
     :root {
       --primary-color: #010815;
+      --primary-light: #1260E0;
       --secondary-color: #D7000B;
+      --tertiary-color: #7FD2E8;
+      --tertiary-light: #ccf4ff;
       --accent-bg-color: rgba(204, 85, 0, 0.1);
       --page-horizontal-padding: 20px;
-      --header-height: 50px;
+      --header-height: 75px;
       --max-content-width: 1200px;
       --heading-font-family: 'Teko', sans-serif;
       --user-img-width: 120px;

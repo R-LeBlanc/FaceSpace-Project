@@ -26,7 +26,7 @@ const HomePage = () => {
   return (
     <Page>
       <Header>
-        <Title>Facespace</Title>
+        <Title>FaceSpace</Title>
         {!userState.signedIn && <SignIn to="/signin">Sign In</SignIn>}
         {userState.signedIn && (
           <Welcome>Welcome, {userState.currentUser.name}</Welcome>
@@ -34,7 +34,7 @@ const HomePage = () => {
       </Header>
       <BigWrapper>
         <Wrapper>
-          <Comment>All Facespace Members</Comment>
+          <Comment>Normandy Crew</Comment>
           {!state.loading &&
             state.data.map((user) => {
               return (
@@ -61,13 +61,23 @@ const HomePage = () => {
 export default HomePage;
 
 const Page = styled.div`
+  background-image: url("/images/Mass_Effect/illusive-man.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: var(--heading-font-family);
+  height: 100%;
 `;
 
 const Header = styled.div`
-  background-color: var(--primary-color);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--primary-color),
+    var(--primary-light)
+  );
+  border-bottom: 1px solid white;
+  border-radius: 0 0 20% 20%;
+  box-shadow: 0 0 15px #4f80d5;
   color: white;
-
   font-size: 2rem;
   height: var(--header-height);
   padding: 15px;
@@ -91,41 +101,45 @@ const Welcome = styled.div`
 const BigWrapper = styled.div`
   display: flex;
   justify-content: center;
-  width: 100vw;
+  /* width: 100vw; */
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  /* padding: 60px; */
+  margin-top: 30px;
   max-width: var(--max-content-width);
 `;
 
 const Comment = styled.div`
-  color: var(--primary-color);
+  color: var(--tertiary-light);
   font-size: 1.8rem;
   margin: 15px 10px 0;
   width: 90%;
 `;
 
 const ImgWrapper = styled.div`
+  display: flex;
+  justify-content: center;
   position: relative;
-  margin: 10px;
   overflow: hidden;
   transition: 0.4s all ease-in-out;
-  height: var(--user-img-width);
+  height: 300px;
+  margin: 10px;
   width: var(--user-img-width);
 
   &:hover {
     border: 5px solid var(--secondary-color);
     cursor: pointer;
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 `;
 
 const Image = styled.img`
   display: flex;
-  width: 100%;
+  height: 100%;
 `;
 
 const Shape = styled.div`

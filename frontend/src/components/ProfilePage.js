@@ -39,7 +39,7 @@ const ProfilePage = () => {
   return (
     <Body>
       <Header>
-        <Title to="/">Facespace</Title>
+        <Title to="/">FaceSpace</Title>
         {!userState.signedIn && <SignIn to="/signin">Sign In</SignIn>}
         {userState.signedIn && (
           <Welcome>Welcome, {userState.currentUser.name}</Welcome>
@@ -113,12 +113,12 @@ const ProfileHeader = styled.div`
 `;
 
 const Banner = styled.div`
-  background-image: url("/images/facespace_bg.jpg");
+  background-image: url("/images/Mass_Effect/mass-effect-legendary-key-art.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 30vh;
-  width: 100vw;
+  /* width: 100vw; */
 `;
 
 const Wrapper = styled.div`

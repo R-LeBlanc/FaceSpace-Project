@@ -52,7 +52,7 @@ const SignInPage = () => {
   return (
     <Body>
       <Header>
-        <Title to="/">Facespace</Title>
+        <Title to="/">FaceSpace</Title>
       </Header>
       <MainWrapper>
         <SigninWrapper>
@@ -76,7 +76,11 @@ const SignInPage = () => {
 export default SignInPage;
 
 const Body = styled.div`
+  background-image: url("/images/Mass_Effect/mass-effect-legendary-key-art.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: var(--heading-font-family);
+  height: 100vh;
 `;
 
 const Header = styled.div`
@@ -97,11 +101,7 @@ const Title = styled(Link)`
 `;
 
 const MainWrapper = styled.div`
-  background-image: url("/images/facespace_bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 95vh;
-  width: 100vw;
+  height: 93%;
 `;
 
 const SigninWrapper = styled.div`
