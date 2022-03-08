@@ -11,14 +11,15 @@
     "name": "Shepard",
     "friends": ["1006", "1008", "1009", "1013", "1014", "1015", "1016", "1017", "1018",
        "1019", "1020", "1021", "1022", "1023", "1024", "1025", "1026", "1027", "1028", "1029"],
-    "avatarUrl": "/images/Mass_Effect/shepard.jpg"
+    "avatarUrl": "/images/Mass_Effect/shepard.jpg",
+    "quote": "I'm Commander Shepard, and this is my favorite store on the Citadel."
   },
   {
     "id": "1008",
     "name": "Liara",
     "friends": ["1006", "1007", "1009", "1029", "1024", "1021"],
     "avatarUrl": "/images/Mass_Effect/liara.jpg",
-    "quote": "Some want to see this Krogan monument removed. But it is important to remember our history... Even if those memories make us uncomfortable."
+    "quote": "It is important to remember our history... Even if those memories make us uncomfortable."
   },
   {
     "id": "1009",

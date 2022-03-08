@@ -36,6 +36,9 @@ const ProfilePage = () => {
     }
   }, [loading]);
 
+  console.log(userState);
+  console.log(userProfile);
+
   return (
     <Body>
       <Header>
@@ -51,7 +54,15 @@ const ProfilePage = () => {
             <Banner src="/images/facespace_bg.jpg" />
             <Wrapper>
               <DisplayImg src={userProfile.avatarUrl} />
-              <Name>{userProfile.name}</Name>
+              <NameWrapper>
+                <Name>{userProfile.name}</Name>
+                {userState.signedIn &&
+                  userState.currentUser.friends.map((friend) => {
+                    if (friend === userProfile.id) {
+                      return <IsFriend>Friends</IsFriend>;
+                    }
+                  })}
+              </NameWrapper>
             </Wrapper>
           </ProfileHeader>
           <FriendsWrapper>
@@ -137,6 +148,7 @@ const Wrapper = styled.div`
 `;
 
 const DisplayImg = styled.img`
+  border: 2px solid var(--secondary-color);
   border-radius: 5%;
   max-height: 20vh;
   position: relative;
@@ -144,12 +156,32 @@ const DisplayImg = styled.img`
   z-index: 5;
 `;
 
+const NameWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+`;
+
 const Name = styled.div`
   color: var(--tertiary-light);
   font-size: 3rem;
-  margin: 20px 30px;
-  height: 40px;
+  margin-left: 15px;
   z-index: 5;
+`;
+
+const IsFriend = styled.div`
+  background-image: linear-gradient(
+    to bottom right,
+    var(--secondary-color),
+    var(--primary-light)
+  );
+  /* background-color: var(--secondary-color); */
+  border-radius: 15px;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px 20px;
 `;
 
 const FriendsWrapper = styled.div`
