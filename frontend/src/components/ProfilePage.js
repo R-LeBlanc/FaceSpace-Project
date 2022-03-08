@@ -55,6 +55,7 @@ const ProfilePage = () => {
             </Wrapper>
           </ProfileHeader>
           <FriendsWrapper>
+            <Quote>"{userProfile.quote}"</Quote>
             <UsersFriends>{userProfile.name}'s Friends</UsersFriends>
             <ImgWrapper>
               {friends.map((friend) => {
@@ -155,11 +156,24 @@ const FriendsWrapper = styled.div`
   background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
+  /* align-items: center; */
   padding: 0 20vw;
 `;
 
+const Quote = styled.div`
+  color: var(--tertiary-light);
+  font-family: Verdana, sans-serif;
+  font-size: 1.2rem;
+  padding-bottom: 30px;
+  text-align: center;
+`;
+
 const UsersFriends = styled.div`
-  background-color: rgba(18, 96, 224, 0.5);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--primary-color),
+    var(--primary-light)
+  );
   border-bottom: 1px solid var(--tertiary-light);
   border-radius: 10px;
   box-shadow: 0 0 5px #4f80d5;

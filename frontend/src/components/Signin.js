@@ -144,7 +144,7 @@ const Submit = styled.button`
 
   &:hover {
     border: 1px solid white;
-    box-shadow: 0 0 15px #4f80d5;
+    box-shadow: 0 0 15px #d7000b;
     cursor: pointer;
     transform: scale(1.1);
   }

@@ -3,7 +3,8 @@
     "id": "1006",
     "name": "Garrus",
     "friends": ["1007", "1008", "1009", "1014", "1021", "1024", "1018"],
-    "avatarUrl": "/images/Mass_Effect/garrus.jpg"
+    "avatarUrl": "/images/Mass_Effect/garrus.jpg",
+    "quote": "It's so much easier to see the world in black and white. Gray? I don't know what to do with gray."
   },
   {
     "id": "1007",
@@ -16,115 +17,134 @@
     "id": "1008",
     "name": "Liara",
     "friends": ["1006", "1007", "1009", "1029", "1024", "1021"],
-    "avatarUrl": "/images/Mass_Effect/liara.jpg"
+    "avatarUrl": "/images/Mass_Effect/liara.jpg",
+    "quote": "Some want to see this Krogan monument removed. But it is important to remember our history... Even if those memories make us uncomfortable."
   },
   {
     "id": "1009",
     "name": "Wrex",
     "friends": ["1006", "1008", "1007", "1019", "1020", "1029", "1028", "1021"],
-    "avatarUrl": "/images/Mass_Effect/wrex.jpg"
+    "avatarUrl": "/images/Mass_Effect/wrex.jpg",
+    "quote": "That's why I love hanging out with you guys! Why shoot something once when you can shoot it 46 more times?"
   },
   {
     "id": "1013",
     "name": "Ashley",
     "friends": ["1007", "1014"],
-    "avatarUrl": "/images/Mass_Effect/ashley.png"
+    "avatarUrl": "/images/Mass_Effect/ashley.png",
+    "quote": "Nothing like a nice relaxing stroll on the beach, blasting bad guys with my boomstick."
   },
   {
     "id": "1014",
     "name": "Kaiden",
     "friends": ["1013", "1015", "1006", "1007", "1027"],
-    "avatarUrl": "/images/Mass_Effect/kaiden.png"
+    "avatarUrl": "/images/Mass_Effect/kaiden.png",
+    "quote": "Sometimes the way a thing goes down does matter, Shepard. Later, when you have to live with yourself. Knowing that you acted with integrity, then it matters."
   },
   {
     "id": "1015",
     "name": "Joker",
     "friends": ["1014", "1016", "1007", "1019", "1022", "1023"],
-    "avatarUrl": "/images/Mass_Effect/joker.png"
+    "avatarUrl": "/images/Mass_Effect/joker.png",
+    "quote": "Hey, Commander, y'know I had my doubts about the council, but after years of ignoring your warning, they're finally willing to step up and tell us they just can't help."
   },
   {
     "id": "1016",
     "name": "Edi",
     "friends": ["1015", "1017", "1026", "1007", "1022", "1023"],
-    "avatarUrl": "/images/Mass_Effect/edi.jpg"
+    "avatarUrl": "/images/Mass_Effect/edi.jpg",
+    "quote": "Do not worry, Shepard. I only forget to recycle the Normandy's oxygen when I've discovered something truly interesting"
   },
   {
     "id": "1017",
     "name": "James",
     "friends": ["1014", "1007", "1016", "1027"],
-    "avatarUrl": "/images/Mass_Effect/james.jpg"
+    "avatarUrl": "/images/Mass_Effect/james.jpg",
+    "quote": "Rachni!? Of all the... It's like you have the opposite of a horseshoe up your ***."
   },
   {
     "id": "1018",
     "name": "Kasumi",
     "friends": ["1007", "1023", "1006", "1021", "1022", "1025"],
-    "avatarUrl": "/images/Mass_Effect/kasumi.png"
+    "avatarUrl": "/images/Mass_Effect/kasumi.png",
+    "quote": "I swear to god, I didn't touch anything!"
   },
   {
     "id": "1019",
     "name": "Mordin",
     "friends": ["1007", "1015", "1021", "1009"],
-    "avatarUrl": "/images/Mass_Effect/mordin.jpg"
+    "avatarUrl": "/images/Mass_Effect/mordin.jpg",
+    "quote": "Had to be me; somebody else might have gotten it wrong"
   },
   {
     "id": "1020",
     "name": "Grunt",
     "friends": ["1009", "1007", "1029", "1028"],
-    "avatarUrl": "/images/Mass_Effect/grunt.jpg"
+    "avatarUrl": "/images/Mass_Effect/grunt.jpg",
+    "quote": "I don’t remember anything after I ate the lamp."
   },
   {
     "id": "1021",
     "name": "Tali",
     "friends": ["1007","1006", "1019", "1008", "1009", "1024", "1018"],
-    "avatarUrl": "/images/Mass_Effect/tali_zorah.jpg"
+    "avatarUrl": "/images/Mass_Effect/tali_zorah.jpg",
+    "quote": "And I thought I had a good poker face."
   },
   {
     "id": "1022",
     "name": "Miranda",
     "friends": ["1023", "1016", "1025", "1007", "1018"],
-    "avatarUrl": "/images/Mass_Effect/miranda.jpg"
+    "avatarUrl": "/images/Mass_Effect/miranda.jpg",
+    "quote": "Before we started this mission, I never would've questioned our goals...I just hope we made the right choice."
   },
   {
     "id": "1023",
     "name": "Jacob",
     "friends": ["1022", "1007", "1018", "1016", "1025"],
-    "avatarUrl": "/images/Mass_Effect/jacob.png"
+    "avatarUrl": "/images/Mass_Effect/jacob.png",
+    "quote": "Good deed’s like pissing yourself in dark pants. Warm feeling but no one notices."
   },
   {
     "id": "1024",
     "name": "Samara",
     "friends": ["1007", "1025", "1006", "1008", "1021"],
-    "avatarUrl": "/images/Mass_Effect/samara.png"
+    "avatarUrl": "/images/Mass_Effect/samara.png",
+    "quote": "At last, I am free. I am a ruined vessel of sorrow and regret, but I am free."
   },
   {
     "id": "1025",
     "name": "Thane",
     "friends": ["1023", "1007", "1026", "1027", "1018"],
-    "avatarUrl": "/images/Mass_Effect/thane_krios.png"
+    "avatarUrl": "/images/Mass_Effect/thane_krios.png",
+    "quote": "The measure of an individual can be difficult to discern by actions alone."
   },
   {
     "id": "1026",
     "name": "Legion",
     "friends": ["1025", "1028", "1016", "1007", "1027"],
-    "avatarUrl": "/images/Mass_Effect/legion.png"
+    "avatarUrl": "/images/Mass_Effect/legion.png",
+    "quote": "Does this unit have a soul?"
   },
   {
     "id": "1027",
     "name": "Jack",
     "friends": ["1026", "1007", "1025", "1014", "1017"],
-    "avatarUrl": "/images/Mass_Effect/jack.jpg"
+    "avatarUrl": "/images/Mass_Effect/jack.jpg",
+    "quote": "If I die, I'm haunting you, Shepard."
   },
   {
     "id": "1028",
     "name": "Zaeed",
     "friends": ["1009", "1020", "1026", "1029", "1007"],
-    "avatarUrl": "/images/Mass_Effect/zaeed.jpg"
+    "avatarUrl": "/images/Mass_Effect/zaeed.jpg",
+    "quote": "Rage is a hell of an anesthetic."
   },
   {
     "id": "1029",
     "name": "Javik",
     "friends": ["1009", "1028", "1020", "1007", "1008"],
-    "avatarUrl": "/images/Mass_Effect/javik.jpg"
+    "avatarUrl": "/images/Mass_Effect/javik.jpg",
+    "quote": "Throw it out the airlock."
   }
  
 ]
