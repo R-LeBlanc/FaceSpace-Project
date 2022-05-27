@@ -36,8 +36,8 @@ const ProfilePage = () => {
     }
   }, [loading]);
 
-  console.log(userState);
-  console.log(userProfile);
+  // console.log(userState);
+  // console.log(userProfile);
 
   return (
     <Body>
@@ -100,7 +100,7 @@ const Header = styled.div`
     var(--primary-light)
   );
   border-bottom: 1px solid white;
-  border-radius: 0 0 20% 20%;
+  /* border-radius: 0 0 20% 20%; */
   box-shadow: 0 0 15px #4f80d5;
   color: white;
 
